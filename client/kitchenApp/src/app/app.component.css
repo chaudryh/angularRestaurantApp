@@ -1,9 +1,10 @@
-html{
+
+h1{
     margin: 0px;
-}
-header{
-    margin: 0px;
-    background-color: #5dfc82;
+    background-color: #5d6dfc;
+    color: #090313;
     height: 100%;
-    width: 100%
+    width: 100%;
+    padding: 20px
+
 }
