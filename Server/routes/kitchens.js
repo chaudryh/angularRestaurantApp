@@ -1,47 +1,47 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const router = express.Router();
+// const mongoose = require('mongoose');
+const krouter = express.Router();
 const bodyParser = require('body-parser');
-const Kitchen = require('../models/Kitchen.js');
+const Kitchen = require('../models/Kitchen');
 const cors = require('cors');
 
-router.use(bodyParser.urlencoded({extend:true}));
-router.use(bodyParser.json());
+krouter.use(bodyParser.urlencoded({extend:true}));
+krouter.use(bodyParser.json());
 
-router.use(cors());
-router.use(function(req,res,next){
+krouter.use(cors());
+krouter.use(function(req,res,next){
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
 
-router.get('/', function(req, res, next){
+krouter.get('/', function(req, res, next){
     Kitchen.find(function(err, kitchens){
         if (err) return next(err);
         res.json(kitchens);
     });
 });
 
-router.post('/', function(req, res, next){
+krouter.post('/', function(req, res, next){
     Kitchen.create(req.body, function(err, kitchen){
         if (err) return next(err);
         res.json(kitchen);
     });
 });
 
- router.put('/:id', function(req, res, next){
+krouter.put('/:id', function(req, res, next){
      Kitchen.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, kitchen){
          if (err) return next(err);
          res.json(kitchen);
          });
  })
 
- router.delete('/:id', function(req, res, next){
+krouter.delete('/:id', function(req, res, next){
      Kitchen.findByIdAndRemove(req.params.id, function(err, kitchen){
          if (err) return next(err);
          res.json(kitchen);
      });
  });
 
-module.exports = router;
+module.exports = krouter;
 
