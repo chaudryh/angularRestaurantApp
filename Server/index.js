@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const kitchens = require('./routes/kitchens');
+const users = require('./routes/users');
+
 
 app.use('/api/kitchens', kitchens);
+app.use('/api/users', users);
 
 mongoose.connect('mongodb://localhost/kitchendb')
     .then(() => console.log('You are now conected to MongoDB!'))

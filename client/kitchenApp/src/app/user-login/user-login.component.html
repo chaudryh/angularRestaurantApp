@@ -5,15 +5,16 @@
             <div class="form-group">
                 <label for="inputEmail" class="control-label">Enter Email</label>
                 <input type="email" class="form-control" id="inputEmail" aria-labelledby="emailnotification">
-                <!-- <small id="emailnotification" class="form-text text-muted">Enter Valid Email Address</small> -->
             </div>
             <div class="form-group">
                 <label for="inputPassword" class="control-label">Enter Password</label>
                 <input type="password" class="form-control" id="inputPassword" aria-labelledby="passwordnotification">
             </div>
             <button type="button" class="btn btn-success btn-lg btn-block">Login</button>
-            <button type="button" class="btn btn-light btn-lg btn-block">Register New User</button>
+            <button type="button" class="btn btn-light btn-lg btn-block" routerLink="/user-registration">Register New User</button>
         </form>
     </div>
 </div>
+
+<router-outlet></router-outlet>
 

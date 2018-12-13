@@ -1,14 +1,10 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-    firstname: String,
-    lastname: String,
-    email: String,
-    password: String,
-    question1: String,
-    answer1: String,
-    question2: String,
-    answer2: String
+const kitchenSchema = new mongoose.Schema({
+    provider: String,
+    kitchenDays: String,
+    time: String,
+    image: String,
 });
 
-module.exports = mongoose.model('Kitchen', userSchema);
+module.exports = mongoose.model('Kitchen', kitchenSchema);

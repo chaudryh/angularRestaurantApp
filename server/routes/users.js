@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const Kitchen = require('../models/Kitchen.js');
+const User = require('../models/User.js');
 const cors = require('cors');
 
 router.use(bodyParser.urlencoded({extend:true}));
@@ -16,30 +16,30 @@ router.use(function(req,res,next){
 });
 
 router.get('/', function(req, res, next){
-    Kitchen.find(function(err, kitchens){
+    User.find(function(err, Users){
         if (err) return next(err);
-        res.json(kitchens);
+        res.json(Users);
     });
 });
 
 router.post('/', function(req, res, next){
-    Kitchen.create(req.body, function(err, kitchen){
+    User.create(req.body, function(err, User){
         if (err) return next(err);
-        res.json(kitchen);
+        res.json(User);
     });
 });
 
  router.put('/:id', function(req, res, next){
-     Kitchen.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, kitchen){
+     User.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, User){
          if (err) return next(err);
-         res.json(kitchen);
+         res.json(User);
          });
  })
 
  router.delete('/:id', function(req, res, next){
-     Kitchen.findByIdAndRemove(req.params.id, function(err, kitchen){
+     User.findByIdAndRemove(req.params.id, function(err, User){
          if (err) return next(err);
-         res.json(kitchen);
+         res.json(User);
      });
  });
 
