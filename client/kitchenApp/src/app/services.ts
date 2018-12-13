@@ -9,14 +9,16 @@ export class KitchenService {
     getKitchen() {
         return this.http.get('http://localhost:4000/api/kitchens');
     }
-
-    
 }
 
-export class UserService {
+@Injectable()
+export class UserRegistrationService {
     constructor (private http: HttpClient) {}
-
-    postUser() {
-        return this.http.get('http://localhost:4000/api/users');
+    
+    
+    postUser(user) {
+        console.log("here")
+        return this.http.post('http://localhost:4000/api/users/post', user);
     }
+
 }

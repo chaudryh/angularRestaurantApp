@@ -1,5 +1,80 @@
 <br>
-<form class="align-items-center container w-50">
+<form class="align-items-center container w-50"  (ngSubmit)="onSubmit()">
+    <div class="form-group" >
+      <label for="firstname">First name</label>
+      <input type="email" class="form-control" [(ngModel)]="userReg.firstName" name="firstname" ngModel >
+    </div>
+
+    <div class="form-group">
+        <label for="lastname">Last name</label>
+        <input type="email" class="form-control" [(ngModel)]="userReg.lastName" name="lastname" ngModel  >
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" [(ngModel)]="userReg.email" name="email" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userReg.password" name="password" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="question1">Security Question 1</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.question1" name="question1" ngModel >
+      </div>
+          
+      <div class="form-group">
+          <label for="answer1">Answer 1</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.answer1" name="answer1" ngModel >
+      </div>
+  
+      <div class="form-group">
+          <label for="question2">Security Question 2</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.question2" name="question2" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="answer2">Answer 2</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.answer2" name="answer2" ngModel >
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-light mr-2">Cancel</button>
+        <button type="submit" class="btn btn-success ml-2">Submit</button>
+      </div>
+      <!-- <pre>{{userReg | json }} </pre> -->
+</form>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <br>
+<form class="align-items-center container w-50" method="POST">
     <div class="form-group" >
       <label for="userRegFirstName">First name</label>
       <input type="email" class="form-control" id="userRegFirstName" >
@@ -44,4 +119,106 @@
         <button type="button" class="btn btn-light mr-2">Cancel</button>
         <button type="button" class="btn btn-success ml-2">Submit</button>
       </div>
-</form>
+</form> -->
+
+<!-- <div class="panel panel-primary">
+        <div class="panel-body">
+          <form [formGroup]="angForm" novalidate>
+            <div class="form-group">
+              <label class="col-md-4">Coin Name</label>
+              <input type="text" class="form-control" formControlName="firstname" #firstname />
+            </div>
+            <div *ngIf="angForm.controls['firstname'].invalid && (angForm.controls['firstname'].dirty || angForm.controls['firstname'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['firstname'].errors.required">
+                First Name is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Price</label>
+              <input type="text" class="form-control" formControlName="lastname" #lastname/>
+            </div>
+            <div *ngIf="angForm.controls['lastname'].invalid && (angForm.controls['lastname'].dirty || angForm.controls['lastname'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['lastname'].errors.required">
+                Last Name is required.
+              </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Name</label>
+              <input type="email" class="form-control" formControlName="email" #email />
+            </div>
+            <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['email'].errors.required">
+                Email is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Price</label>
+              <input type="password" class="form-control" formControlName="password" #password/>
+            </div>
+            <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['password'].errors.required">
+                Password is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Name</label>
+              <input type="text" class="form-control" formControlName="firstname" #firstname />
+            </div>
+            <div *ngIf="angForm.controls['question1'].invalid && (angForm.controls['question1'].dirty || angForm.controls['question1'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['question1'].errors.required">
+                Security Question 1 is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Price</label>
+              <input type="text" class="form-control" formControlName="answer1" #answer1/>
+            </div>
+            <div *ngIf="angForm.controls['answer1'].invalid && (angForm.controls['answer1'].dirty || angForm.controls['answer1'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['answer1'].errors.required">
+                Answer 1 is required.
+              </div>
+              <div></div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Name</label>
+              <input type="email" class="form-control" formControlName="question2" #question2 />
+            </div>
+            <div *ngIf="angForm.controls['question2'].invalid && (angForm.controls['question2'].dirty || angForm.controls['question2'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['question2'].errors.required">
+                Security Question 2 is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4">Coin Price</label>
+              <input type="text" class="form-control" formControlName="answer2" #answer2/>
+            </div>
+            <div *ngIf="angForm.controls['answer2'].invalid && (angForm.controls['answer2'].dirty || angForm.controls['answer2'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['answer2'].errors.required">
+                Answer 2 is required.
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <button (click)="postUser(firstname.value, lastname.value, email.value, password.value, question1.value, answer1.value, question2.value, answer2.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </div>
+      </div> -->
+
+
+<!-- <form #userReg="ngForm" (ngSubmit)="onSubmit(userReg)" >
+
+  <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" name="firstname" ngModel>
+  </div>
+
+  <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" name="lastname" ngModel>
+  </div>
+
+  <div class="form-group">
+        <button type="submit">Submit</button>
+  </div>
+
+  <pre>{{userReg.value | json }} </pre> 
+</form> -->

@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
-import {KitchenService} from './services'
+import { FormsModule }   from '@angular/forms';
+
+import { KitchenService, UserRegistrationService } from './services'
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
@@ -23,8 +25,10 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule
   ],
-  providers: [KitchenService],
+  providers: [KitchenService, UserRegistrationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}
