@@ -2,8 +2,11 @@ const mongoose = require('mongoose');
 
 const kitchenSchema = new mongoose.Schema({
     provider: String,
+    email: String,
+    password: String,
     kitchenDays: String,
-    time: String,
+    starttime: String,
+    endtime: String,
     image: String,
 });
 

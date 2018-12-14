@@ -4,10 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule }   from '@angular/forms';
 
-import { KitchenService, UserRegistrationService } from './services'
+import { KitchenService, ProviderRegistrationService, UserLoginService, UserRegistrationService } from './services'
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
+import { ProviderRegistrationComponent } from './provider-registration/provider-registration.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
@@ -17,6 +18,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     AppComponent,
     UserLoginComponent,
     ProviderLoginComponent,
+    ProviderRegistrationComponent,
     CheckoutComponent,
     UserRegistrationComponent,
     KitchenComponent
@@ -27,7 +29,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [KitchenService, UserRegistrationService],
+  providers: [KitchenService, ProviderRegistrationService, UserLoginService, UserRegistrationService],
   bootstrap: [AppComponent]
 })
 
