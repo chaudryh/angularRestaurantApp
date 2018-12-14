@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationService } from "../services";
-import { Router } from "@angular/router";
 
 
 @Component({
@@ -12,7 +11,7 @@ import { Router } from "@angular/router";
 
 export class UserRegistrationComponent implements OnInit {
   
-  constructor(private service: UserRegistrationService, private router: Router) {}
+  constructor(private service: UserRegistrationService) {}
 
   submitted:boolean;
 
@@ -23,11 +22,9 @@ export class UserRegistrationComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res)
-          this.router.navigate(['user-login']);
         }, err => console.log(err));
       //console.log(userReg.value);
       this.submitted = true;
-
       //this.userData = userReg.value;
   }
 

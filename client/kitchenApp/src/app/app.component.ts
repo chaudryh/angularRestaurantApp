@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { Component,OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'FeastFreedom';
-  
+  logout() {
+    localStorage.removeItem('jwtToken');
+    console.log("logging out");
+    //this.router.navigate(['login']);
+  }
 }

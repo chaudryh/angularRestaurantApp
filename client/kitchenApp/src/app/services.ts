@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 
+
 @Injectable()
 export class KitchenService {
     constructor (private http: HttpClient) {}
@@ -24,6 +25,20 @@ export class UserRegistrationService {
 
 }
 
+
+@Injectable()
+export class ProviderRegistrationService {
+    constructor (private http: HttpClient) {}
+    
+    
+    postkitchen(kitchen) {
+        console.log("here")
+        return this.http.post('http://localhost:4000/api/kitchens/post', kitchen);
+    }
+
+}
+
+//User Login Service
 @Injectable()
 export class UserLoginService {
     constructor (private http: HttpClient) {}
@@ -40,9 +55,27 @@ export class UserLoginService {
           console.log(`${operation} failed: ${error.message}`);
           return of(result as T);
         };
-      }
-    
-
-
-
+      }   
 }
+
+
+// Login Service for Provider
+@Injectable()
+export class ProviderLoginService {
+    constructor (private http: HttpClient) {}
+    
+    
+    loginUser(user) {
+        console.log(user);
+        return this.http.post('http://localhost:4000/api/kitchens/login', user);
+    }
+
+    private handleError<T> (operation = 'operation', result?: T) {
+        return (error: any): Observable<T> => {
+          console.error(error); // log to console instead
+          console.log(`${operation} failed: ${error.message}`);
+          return of(result as T);
+        };
+      }   
+}
+

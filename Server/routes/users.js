@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const bodyParser = require('body-parser');
-var jwt = require('jsonwebtoken');
 const User = require('../models/User.js');
+var jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 router.use(bodyParser.urlencoded({extend:true}));
@@ -29,9 +29,9 @@ router.get('/:id', function(req, res, next){
     let id = req.params.id;
     console.log(req.params.id)
     console.log(id);
-    Kitchen.find(function(err, kitchen){
+    User.find(function(err, user){
         if (err) return next(err);
-        res.json(kitchen);
+        res.json(user);
     });
 });
 
@@ -42,6 +42,7 @@ router.post('/post', function(req, res, next){
         res.json(User);
     });
 });
+
 
 //login method
 router.post('/login', function(req, res) {

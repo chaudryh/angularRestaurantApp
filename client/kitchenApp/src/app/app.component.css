@@ -1,10 +1,26 @@
-
 h1{
     margin: 0px;
     background-color: #5d6dfc;
-    color: #090313;
+    color: white;
     height: 100%;
     width: 100%;
     padding: 20px
+}
 
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #5d6dfc;
+    color: white;
+    text-align: center;
+ }
+
+ nav li a{
+     color:white
+ }
+
+ nav li a:hover{
+    color:#5d6dfc
 }

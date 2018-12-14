@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Kitchen = require('../models/Kitchen.js');
+var jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 router.use(bodyParser.urlencoded({extend:true}));
@@ -41,6 +42,34 @@ router.post('/post', function(req, res, next){
         res.json(kitchen);
     });
 });
+
+
+
+//login method
+router.post('/login', function(req, res) {
+    Kitchen.findOne({
+      email: req.body.email
+    }, function(err, user) {
+      if (err) throw err;
+      if (!user) {
+        res.status(401).send({success: false, msg: 'Authentication failed. User not found.'});
+      } else {
+        // check if password matches
+        user.comparePassword(req.body.password, function (err, isMatch) {
+          if (isMatch && !err) {
+            // if user is found and password is right create a token
+            var token = jwt.sign(user.toJSON(), 'hahatwz');
+            // return the information including token as JSON
+            res.json({success: true, token: 'JWT ' + token});
+          } else {
+            res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+          }
+        });
+      }
+    });
+  });
+
+
 
 //update one
  router.put('/update/:id', function(req, res, next){
