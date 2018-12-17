@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { KitchenService } from "../services";
+import { KitchenService, OrderService } from "../services";
 
 
 @Component({
@@ -10,9 +10,16 @@ import { KitchenService } from "../services";
 export class KitchenComponent implements OnInit {
 
   kitchens : any;
-  constructor(private service: KitchenService) {}
+  constructor(private service: KitchenService, private service2: OrderService) {}
+
 
   ngOnInit() {
     this.service.getKitchen().subscribe(response => {this.kitchens = response, console.log(this.kitchens)}, err => console.log(err));
+  }
+
+  dostuff(kitchen){
+    console.log(kitchen);
+    console.log(kitchen.provider);
+    this.service2.getItem(kitchen);
   }
 }

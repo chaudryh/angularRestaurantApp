@@ -21,3 +21,12 @@
   overflow: hidden;
   background-color: #f1f1f1;
 }
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}

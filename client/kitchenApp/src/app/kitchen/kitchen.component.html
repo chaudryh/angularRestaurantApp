@@ -3,11 +3,13 @@
     <div class="row text-center text-lg-left">
       <div class="col-md-4 col-lg-3 col-xs-6" *ngFor="let kitchen of kitchens">
         <a href="#" class="d-block mb-4 h-100" >
-          <img class="img-fluid img-thumbnail" src="{{kitchen.image}}" alt="">
+          <img class="img-fluid img-thumbnail" src="{{kitchen.image}}" style="width:250px; height:150px;" width="250" height="100" alt="{{kitchen.provider}}">
           <div class="caption text-center">
-            <p>{{kitchen.provider}}</p>
+            <p><a routerLink="order" (click)="dostuff(kitchen)" >{{kitchen.provider}}</a></p>
           </div>
         </a>
       </div>
      </div> 
 </div>
+
+

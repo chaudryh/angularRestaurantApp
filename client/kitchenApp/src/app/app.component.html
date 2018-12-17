@@ -18,14 +18,15 @@
             <li class="nav-item">
                     <a class="nav-link" routerLink="/user-login">User Login</a>
                   </li>
-            <li class="nav-item">
-                    <a class="nav-link" routerLink="/checkout">Checkout</a>
-                  </li>
           </ul>
+
+          <span class="navbar-text">
+              <div style="display: inline-block;" id="result"></div><a (click)="logout()" routerLink="/kitchen"> [Logout]</a>
+          </span>
         </div>
       </nav>
       
-<div class="footer">©Team Leftovers | 2018</div>
+<div class="footer">© Team Leftovers | 2018</div>
 
 <router-outlet></router-outlet>
 <!-- <app-menu></app-menu> -->

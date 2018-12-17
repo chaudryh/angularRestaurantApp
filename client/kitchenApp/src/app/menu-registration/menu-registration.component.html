@@ -1,0 +1,26 @@
+<form class="align-items-center container w-50"  (ngSubmit)="onSubmit()">
+  <div class="form-group">
+          <div class="caption text-center">
+              <select [(ngModel)]="menu.provider"  name="provider" ngModel>
+                  <option  *ngFor="let kitchen of kitchens" >{{kitchen.provider}}</option>
+               </select>
+          </div>  
+   </div>
+   <div class="form-group" >
+      <label for="item">Item</label>
+      <input type="text" class="form-control" [(ngModel)]="menu.item" name="item" ngModel >
+    </div>
+
+    <div class="form-group" >
+        <label for="veg">Veg</label>
+        <input type="text" class="form-control" [(ngModel)]="menu.veg" name="veg" ngModel >
+      </div>
+
+      <div class="form-group" >
+          <label for="price">Price</label>
+          <input type="number" class="form-control" [(ngModel)]="menu.price" name="price" ngModel >
+        </div>
+        <button type="button" class="btn btn-light mr-2">Cancel</button>
+        <button type="submit" class="btn btn-success ml-2" >Submit</button>
+
+</form>

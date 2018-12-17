@@ -2,7 +2,6 @@ h1{
     margin: 0px;
     background-color: #5d6dfc;
     color: white;
-    height: 100%;
     width: 100%;
     padding: 20px
 }
@@ -21,6 +20,7 @@ h1{
      color:white
  }
 
- nav li a:hover{
-    color:#5d6dfc
+ nav li a:hover, span a:hover{
+    color:#5d6dfc;
+    text-decoration: none
 }

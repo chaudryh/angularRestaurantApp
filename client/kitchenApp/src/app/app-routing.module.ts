@@ -8,6 +8,8 @@ import { ProviderRegistrationComponent } from './provider-registration/provider-
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
+import { MenuRegistrationComponent } from './menu-registration/menu-registration.component';
+import { OrderComponent } from './order/order.component';
 
 
 const routes: Routes = [
@@ -19,6 +21,9 @@ const routes: Routes = [
   { path: 'user-registration', component: UserRegistrationComponent },
   { path: 'provider-registration', component: ProviderRegistrationComponent },
   { path: 'provider-login', component: ProviderLoginComponent },
+  { path: 'menu-registration', component: MenuRegistrationComponent },
+  { path: 'order', component: OrderComponent },
+
 
 
 ];

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule }   from '@angular/forms';
 
-import { KitchenService, ProviderRegistrationService, UserLoginService, UserRegistrationService } from './services'
+import { KitchenService, MenuService, OrderService, MenuRegistrationService, ProviderLoginService, ProviderRegistrationService, UserLoginService, UserRegistrationService } from './services'
 import { AppComponent } from './app.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ProviderLoginComponent } from './provider-login/provider-login.component';
@@ -12,6 +12,9 @@ import { ProviderRegistrationComponent } from './provider-registration/provider-
 import { CheckoutComponent } from './checkout/checkout.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { KitchenComponent } from './kitchen/kitchen.component';
+import { MenuRegistrationComponent } from './menu-registration/menu-registration.component';
+import { OrderComponent } from './order/order.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     ProviderRegistrationComponent,
     CheckoutComponent,
     UserRegistrationComponent,
-    KitchenComponent
+    KitchenComponent,
+    MenuRegistrationComponent,
+    OrderComponent
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,7 @@ import { KitchenComponent } from './kitchen/kitchen.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [KitchenService, ProviderRegistrationService, UserLoginService, UserRegistrationService],
+  providers: [KitchenService, OrderService, MenuService, MenuRegistrationService, ProviderRegistrationService, ProviderLoginService, UserLoginService, UserRegistrationService],
   bootstrap: [AppComponent]
 })
 

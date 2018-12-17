@@ -15,8 +15,6 @@ export class UserLoginComponent implements OnInit {
   data: any;
   constructor(private service: UserLoginService, private router: Router) {}
 
-
-
   userlogin = {}
   onSubmit() {
     this.service.loginUser(this.userlogin)
@@ -30,7 +28,6 @@ export class UserLoginComponent implements OnInit {
     this.submitted = true;
    }
 
-
    private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error); // log to console instead
@@ -38,8 +35,7 @@ export class UserLoginComponent implements OnInit {
       return of(result as T);
     };
   }
-
-
+  
   ngOnInit() {
   }
 
