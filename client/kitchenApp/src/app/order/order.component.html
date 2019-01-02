@@ -1,0 +1,40 @@
+<head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<h3>Welcome to {{kitchen.provider}}</h3>
+
+<h5>Kitchen closes: {{ kitchen.starttime }} </h5>
+<h5>Kitchen opens: {{ kitchen.endtime }} </h5>
+<h5>Operation days: {{ kitchen.kitchenDays }} </h5>
+
+<br>
+
+<h5>Menu Items</h5><br>
+
+<form class="align-items-center w-50">
+  <table border="1" class="justify-content-center">
+    <tr >
+      <th>Item</th>
+      <th>Type</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let dish of shoppingCart" >
+      <th>{{dish.item}}</th>
+      <th>{{dish.veg}}</th>
+      <th>{{dish.price}}</th>
+      <th><input class="" [(ngModel)]="dish.quantity" type="number" [ngModelOptions]="{standalone: true}"></th>
+      <td id="TotalBox"><span *ngIf="dish.quantity*dish.price"> {{dish.quantity*dish.price}}</span></td>
+    </tr>
+    <tr>
+      <th> Total: </th>
+     
+      <td colspan="4">{{getTotal()}}</td>
+    </tr>
+  </table>
+
+  <br>
+
+<button type="submit" class="btn btn-success ml-2" routerLink='/checkout'>Checkout</button>
+
+<br><br><br><br>

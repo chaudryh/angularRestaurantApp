@@ -1,0 +1,56 @@
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+ -->
+
+  </head><br>
+<form class="align-items-center container w-50"  (ngSubmit)="onSubmit()">
+    <div class="form-group" >
+      <label for="provider">Provider</label>
+      <input type="text" class="form-control" [(ngModel)]="kitchen.provider" name="provider" ngModel >
+    </div>
+
+    <div class="form-group" >
+      <label for="email">Email</label>
+      <input type="text" class="form-control" [(ngModel)]="kitchen.email" name="email" ngModel >
+    </div>
+
+    <div class="form-group" >
+      <label for="password">Password</label>
+      <input type="password" class="form-control" [(ngModel)]="kitchen.password" name="password" ngModel >
+    </div>
+    <button type="button" class="btn btn-light mr-2" onclick="location.href = '/kitchen';">Cancel</button>
+    <button type="button" class="btn btn-success ml-2" data-toggle="collapse" data-target="#demo">Next</button>
+    <div id="demo" class="collapse">
+    <div class="form-group" >
+      <label for="image">Image URL</label>
+      <input type="text" class="form-control" [(ngModel)]="kitchen.image" name="image" ngModel >
+    </div>
+     
+  <div class="form-group">
+      <label for="kitchenDays">Days</label>
+      <input type="text" class="form-control" [(ngModel)]="kitchen.ktchenDays" name="kitchenDays" ngModel >
+  </div>
+
+  <div class="form-group">
+      <label for="starttime">Start Time</label>
+      <input type="time" class="form-control" [(ngModel)]="kitchen.starttime" name="starttime" ngModel >
+  </div>
+
+  <div class="form-group">
+      <label for="endtime">End Time</label>
+      <input type="time" class="form-control" [(ngModel)]="kitchen.endtime" name="endtime" ngModel >
+  </div>
+
+
+<div class="text-center">
+  <button type="button" class="btn btn-light mr-2">Cancel</button>
+  <button type="submit" class="btn btn-success ml-2" onclick="window.location.href='/menu-registration'">Submit</button>
+</div>
+</div>
+</form>
+
+<br><br>

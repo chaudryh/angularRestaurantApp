@@ -1,0 +1,71 @@
+<br>
+<form class="align-items-center container w-50"  (ngSubmit)="onSubmit()">
+    <div class="form-group" >
+      <label for="firstname">First name</label>
+      <input type="email" class="form-control" [(ngModel)]="userReg.firstname" name="firstname" ngModel >
+    </div>
+
+    <div class="form-group">
+        <label for="lastname">Last name</label>
+        <input type="email" class="form-control" [(ngModel)]="userReg.lastname" name="lastname" ngModel  >
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" [(ngModel)]="userReg.email" name="email" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="userReg.password" name="password" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="question1">Security Question 1</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.question1" name="question1" ngModel >
+      </div>
+          
+      <div class="form-group">
+          <label for="answer1">Answer 1</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.answer1" name="answer1" ngModel >
+      </div>
+  
+      <div class="form-group">
+          <label for="question2">Security Question 2</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.question2" name="question2" ngModel >
+      </div>
+
+      <div class="form-group">
+          <label for="answer2">Answer 2</label>
+          <input type="email" class="form-control" [(ngModel)]="userReg.answer2" name="answer2" ngModel >
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-light mr-2">Cancel</button>
+        <button type="submit" class="btn btn-success ml-2" onclick="window.location.href='/user-login'">Submit</button>
+      </div>
+      <!-- <pre>{{userReg | json }} </pre> -->
+</form>
+
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
